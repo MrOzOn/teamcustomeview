@@ -1,5 +1,6 @@
 package com.mrozon.teamviewexample
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +11,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         performDataBinding()
@@ -23,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         )
 
         binding.teamView.bind(Color.parseColor("#CCCCCC"), members)
+        binding.textView.text = "Your team contains ${members.size} players"
     }
 
     private fun performDataBinding() {
