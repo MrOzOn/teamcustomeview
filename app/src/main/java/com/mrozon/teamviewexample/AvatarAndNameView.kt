@@ -19,6 +19,7 @@ class AvatarAndNameView(context: Context, member: Member) : LinearLayout(context
         if (member.picture != null) {
             binding.userAvatar
                 .load(member.picture) {
+                    placeholder(R.drawable.ic_loading)
                     transformations(CircleCropTransformation())
                 }
         } else {
